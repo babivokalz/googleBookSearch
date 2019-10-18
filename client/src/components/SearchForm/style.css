@@ -1,0 +1,15 @@
+form.search {
+  /* overflow: auto; */
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+form.search button[type="submit"] {
+  float: right;
+  margin-top: 10px;
+}
+
+form.search label[for="book-input"] {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}

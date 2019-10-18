@@ -4,8 +4,10 @@
   "homepage": "https://babivokalz.github.io/googleBooks/",
   "private": true,
   "dependencies": {
+    "express": "^4.17.1",
     "gh-pages": "^2.1.1",
     "mongoose": "^5.7.5",
+    "path": "^0.12.7",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "react-router-dom": "^5.1.2",

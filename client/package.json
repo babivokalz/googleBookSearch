@@ -1,8 +1,9 @@
 {
   "name": "googlebooks",
   "version": "0.1.0",
-  "homepage": "https://babivokalz.github.io/googleBooks/",
+  "homepage": "https://babivokalz.github.io/googleBookSearch/",
   "private": true,
+  "main": "server.js",
   "dependencies": {
     "express": "^4.17.1",
     "gh-pages": "^2.1.1",
@@ -15,12 +16,13 @@
     "router": "^1.3.3"
   },
   "scripts": {
-    "predeploy": "npm run build",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "deploy": "gh-pages -d build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "node server.js",
+    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "client": "cd client && npm run start",
+    "install": "cd client && npm install",
+    "build": "cd client && npm run build",
+    "heroku-postbuild": "npm run build"
   },
   "eslintConfig": {
     "extends": "react-app"
